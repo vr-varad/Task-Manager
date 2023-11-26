@@ -13,11 +13,12 @@ app.use(express.static('./public'))
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use('/api/v1/tasks',apiRoutes)
 const start = async()=>{
   try {
     await connectDB()
     app.listen(port,'0.0.0.0',()=>{console.log('Server Started at port',port)})
+    app.use('/api/v1/tasks',apiRoutes)
+
   } catch (error) {
     console.log(error)
   }
