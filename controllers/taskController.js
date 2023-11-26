@@ -5,6 +5,7 @@ console.log("Inside controller")
 
 const getAllTasks = asyncWrapper(async (req,res)=>{
   const tasks = await TaskModel.find()
+  console.log(tasks)
     return res.status(200).json({
       tasks: tasks,
       message: 'Successfully fetched all the tasks',
