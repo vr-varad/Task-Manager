@@ -1,6 +1,8 @@
 const TaskModel = require('../models/taskModel')
 const asyncWrapper = require('../middleware/async')
 
+console.log("Inside controller")
+
 const getAllTasks = asyncWrapper(async (req,res)=>{
   const tasks = await TaskModel.find()
     return res.status(200).json({
