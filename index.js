@@ -14,7 +14,11 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.use('/api/v1/tasks',apiRoutes)
-app.use('/',notFound)
+app.get('/', (req,res)=>{
+  res.json({
+    message : "Server started "
+  })
+})
 
 
 const start = async()=>{
