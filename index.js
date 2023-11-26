@@ -17,7 +17,7 @@ app.use('/api/v1/tasks',apiRoutes)
 const start = async()=>{
   try {
     await connectDB()
-    app.listen(port,()=>{console.log('Server Started at port',port)})
+    app.listen(port,'0.0.0.0',()=>{console.log('Server Started at port',port)})
   } catch (error) {
     console.log(error)
   }
